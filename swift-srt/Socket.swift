@@ -52,6 +52,8 @@ public enum SRTSocketOption: Int {
     case transtype = 50       // Transmission type (set of options required for given transmission type)
     case packetfilter = 60    // Add and configure a packet filter
     case retransmitalgo = 61   // An option to select packet retransmission algorithm}
+    case streamid = 46
+    
 }
 
 public enum SRTSocketState: Int {
@@ -70,8 +72,9 @@ public enum SRTSocketState: Int {
 public struct SRTSocket {
     public let socketId: Int32
 
-    public init(sender: Bool = false) {
+    public init(sender: Bool, streamid: String) {
         self.socketId = SRTWrapper.sharedInstance().createSocket(asSender: sender)
+        self.setOption(option: <#T##SRTSocketOption#>.streamid, value: streamid)
     }
     
     public init(withSocketId socket: Int32) {
@@ -149,7 +152,15 @@ public struct SRTSocket {
     // TODO: Add enum for option and support more types
     public func set(option: SRTSocketOption, value: Int) throws {
         if let exception = tryBlock({
-            SRTWrapper.sharedInstance().setOption(Int32(option.rawValue), toValue: Int32(value), forSocket: socketId)
+            SRTWrapper.sharedInstance().setFlag(Int32(option.rawValue), toValue: Int32(value), forSocket: socketId)
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
+    }
+    
+    public func setOption(option: SRTSocketOption, value: String) throws {
+        if let exception = tryBlock({
+            SRTWrapper.sharedInstance().setOption(Int32(option.rawValue), toValue: value, forSocket: socketId)
         }) {
             throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
         }
@@ -157,7 +168,7 @@ public struct SRTSocket {
     
     // TODO: Enum for options and do not use NSValue
     public func get(option: SRTSocketOption) -> NSValue {
-        SRTWrapper.sharedInstance().getOption(Int32(option.rawValue), fromSocket: socketId)
+        SRTWrapper.sharedInstance().getFlag(Int32(option.rawValue), fromSocket: socketId)
     }
     
     public func stats(shouldClear clear: Bool) -> [AnyHashable: Any] {
