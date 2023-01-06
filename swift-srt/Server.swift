@@ -16,7 +16,7 @@ public class SRTServer {
     public private(set) var running = false
     
     public init(url: URL) throws {
-        self.socket = SRTSocket()
+        self.socket = SRTSocket(sender: false)
         try self.socket.bind(to: url)
         try self.socket.listen(withBacklog: 2)
     }

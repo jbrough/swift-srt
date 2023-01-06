@@ -10,8 +10,8 @@ import Foundation
 public class SRTStream {
     private let socket: SRTSocket
     
-    public init(serverUrl: URL) throws {
-        self.socket = SRTSocket(sender: true)
+    public init(serverUrl: URL, streamid: String = "1") throws {
+        self.socket = SRTSocket(sender: true, streamid: streamid)
         do {
             try self.socket.connect(to: serverUrl)
         }

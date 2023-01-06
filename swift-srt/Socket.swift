@@ -72,9 +72,9 @@ public enum SRTSocketState: Int {
 public struct SRTSocket {
     public let socketId: Int32
 
-    public init(sender: Bool, streamid: String) {
+    public init(sender: Bool, streamid: String = "1") {
         self.socketId = SRTWrapper.sharedInstance().createSocket(asSender: sender)
-        self.setOption(option: <#T##SRTSocketOption#>.streamid, value: streamid)
+        try! self.setOption(option: SRTSocketOption.streamid, value: streamid)
     }
     
     public init(withSocketId socket: Int32) {

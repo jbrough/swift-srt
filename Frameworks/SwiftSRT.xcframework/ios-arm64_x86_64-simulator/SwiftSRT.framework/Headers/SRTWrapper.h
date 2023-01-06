@@ -31,8 +31,9 @@ NS_INLINE NSException * _Nullable tryBlock(void(^_Nonnull tryBlock)(void)) {
 - (int) closeSocket: (int)socket;
 - (NSData*) readFromSocket: (int)socket withChunkSize: (int)chunkSize;
 - (int) writeToSocket: (int)socket withChunk: (NSData*)chunk;
-- (int) setOption: (int)option toValue: (int)value forSocket: (int)socket;
-- (NSValue*) getOption: (int)option fromSocket: (int)socket;
+- (int) setFlag: (int)option toValue: (int)value forSocket: (int)socket;
+- (int) setOption: (int)option toValue: (const char *)value forSocket: (int)socket;
+- (NSValue*) getFlag: (int)option fromSocket: (int)socket;
 - (int) getStateFromSocket: (int)socket;
 - (int) epollCreate;
 - (int) epollAddUsockFor: (int)epid withSocket: (int)socket events: (int)events;

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		7HRq816W08wkrONLTC9F1amI50c=
+		25kMVlkpo6FVi6kaswHdu+aMWiQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,14 +15,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zuoU6pqHufyu16khNTuOedfsI4liBUiDlYIZRnTh4Hs=
+			bkuk1SzJRTENVEGOmBSLoMMpbE+WSOKwW4Dv0l+g770=
 			</data>
 		</dict>
 		<key>Headers/SwiftSRT-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6PZpXDVESaqnugP2JoqMF95wk715xfewbTr0AfZMPbU=
+			MJSnhF/VSOfGZLTDxBJxpOOX6QssB9Fy8TwWdpCEUh8=
 			</data>
 		</dict>
 		<key>Headers/SwiftSRT.h</key>
@@ -36,126 +36,98 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aR7cvI1UZg8veJeVWqWim03w1u8A+auLG7LWCnbIWuY=
-			</data>
-		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			aR7cvI1UZg8veJeVWqWim03w1u8A+auLG7LWCnbIWuY=
+			EK1Z4K1XHZIDKxVunrDL9IabbbwJRx5QEgYLUshEI5M=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/Project/x86_64-apple-macos.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VMPFRZ9ORNrqyiCDg9RhDCvo1rW70dNmg4Kx+6+UFHI=
+			uA/h8N6thTTSv2qbDGbtnL+QCTPcR6WIrGLWfVTDSi4=
 			</data>
 		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<key>Modules/SwiftSRT.swiftmodule/arm64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VMPFRZ9ORNrqyiCDg9RhDCvo1rW70dNmg4Kx+6+UFHI=
+			TerGNyP3JqcXMyVsPYWvOcPU8603cccKytfNnruZxJc=
+			</data>
+		</dict>
+		<key>Modules/SwiftSRT.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4aC0gDjvkTcewK2QiNn8uznwTmVVsjGQwySdwViaqeo=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/arm64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ACQ/55qrb4GWsQf/fgD7fEGIbckIg3ZVD2OAiVMF88M=
+			UYyV6tNtJAVcHlneBA2aL4yGynWDSHDyUyLdhMNO2+0=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/arm64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K3mrqx3jK36w28aOvHAgU3D0tovemT9QSnXq/tGaAvg=
+			4aC0gDjvkTcewK2QiNn8uznwTmVVsjGQwySdwViaqeo=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/arm64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			j6uevuuGoYyC5u9eyVp0F4aOQ66BL6nLIguNs1op854=
+			/t0jKAtHJn1A+FqI4zu3+Opxaj44gPmNwBeLdHjElVI=
 			</data>
 		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/SwiftSRT.swiftmodule/x86_64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ACQ/55qrb4GWsQf/fgD7fEGIbckIg3ZVD2OAiVMF88M=
+			TerGNyP3JqcXMyVsPYWvOcPU8603cccKytfNnruZxJc=
 			</data>
 		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/arm64.swiftinterface</key>
+		<key>Modules/SwiftSRT.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K3mrqx3jK36w28aOvHAgU3D0tovemT9QSnXq/tGaAvg=
-			</data>
-		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			j6uevuuGoYyC5u9eyVp0F4aOQ66BL6nLIguNs1op854=
+			e6vOLRJVzDtMoFoDU0C5oLYeo7b6BJaSOADk4XvPDBs=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EadJcirVji7FL9nnIUwy8/EAhfJ/Yph5kufADfeN7KI=
+			mQcofP4cz0Xlvza2UhAOytWlrpg0XCWPpupRIbmE2nY=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T1H3X3H+QBbyCba8U6BzyL2iODJANqWLiEqCJNXW/M8=
+			e6vOLRJVzDtMoFoDU0C5oLYeo7b6BJaSOADk4XvPDBs=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l/+a+VdVcEZJ7uw7dnrzvnCGqbrxkEUeU9HxBKRbmQk=
-			</data>
-		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			EadJcirVji7FL9nnIUwy8/EAhfJ/Yph5kufADfeN7KI=
-			</data>
-		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			T1H3X3H+QBbyCba8U6BzyL2iODJANqWLiEqCJNXW/M8=
-			</data>
-		</dict>
-		<key>Modules/SwiftSRT.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			l/+a+VdVcEZJ7uw7dnrzvnCGqbrxkEUeU9HxBKRbmQk=
+			nUa4dZMaqEZNSDmPCYZZDTozQ20+zh/asv7LQcA5a/U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QPdKvhie2g+g7J8SdN1cxkTlLYP6RHuS6q9Nnf9Num4=
+			X9sEYfZf6Krpw1zLL7FiAiTMDWCSYsZdb/oMaPqyBo4=
 			</data>
 		</dict>
 		<key>Resources/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8yZ/MHK+RlkzOAsimEMTeF9rUpn8+Ajmgs3Jb9Hd6rk=
+			rqqwFPbfvMwA0u7m+zk115wcYMZjo8hnq1JLcdevF3o=
 			</data>
 		</dict>
 	</dict>

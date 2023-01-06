@@ -158,8 +158,8 @@
     return result;
 }
 
-- (int)setOption:(int)option toValue:(void)value forSocket:(int)socket {
-    int result = srt_setsockoption(socket, (SRT_SOCKOPT)option, &value, sizeof(value));
+- (int)setOption:(int)option toValue:(const char *)value forSocket:(int)socket {
+    int result = srt_setsockopt(socket, 0, (SRT_SOCKOPT)option, value, sizeof(value));
     
     if (result == SRT_ERROR) {
         [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
@@ -168,7 +168,7 @@
     return result;
 }
 
-- (NSValue *)getFlag(int)option fromSocket:(int)socket {
+- (NSValue *)getFlag:(int)option fromSocket:(int)socket {
     // TODO: Different types for different options
     int optValue;
     int optSize = sizeof(optValue);

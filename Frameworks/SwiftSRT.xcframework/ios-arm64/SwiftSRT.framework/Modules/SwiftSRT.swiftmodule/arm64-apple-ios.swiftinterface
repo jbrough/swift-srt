@@ -1,10 +1,16 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftSRT
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import Combine
 import Foundation
 import Swift
 @_exported import SwiftSRT
+import _Concurrency
+import _StringProcessing
+public protocol TSWriterDelegate : AnyObject {
+  func didOutput(_ data: Foundation.Data)
+}
 public struct SRTEpollEventSet : Swift.OptionSet {
   public let rawValue: Swift.Int
   public init(rawValue: Swift.Int)
@@ -69,6 +75,24 @@ public enum SRTSocketOption : Swift.Int {
   case transtype
   case packetfilter
   case retransmitalgo
+  case streamid
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SRTSocketState : Swift.Int {
+  case socket_init
+  case opened
+  case listening
+  case connecting
+  case connected
+  case broken
+  case closing
+  case closed
+  case nonexist
+  case unknown
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -77,7 +101,7 @@ public enum SRTSocketOption : Swift.Int {
 }
 public struct SRTSocket {
   public let socketId: Swift.Int32
-  public init(sender: Swift.Bool = false)
+  public init(sender: Swift.Bool, streamid: Swift.String = "1")
   public init(withSocketId socket: Swift.Int32)
   public func bind(to url: Foundation.URL) throws
   public func listen(withBacklog backlog: Swift.Int) throws
@@ -87,8 +111,18 @@ public struct SRTSocket {
   public func read(dataWithSize size: Swift.Int) throws -> Foundation.Data
   public func write(data: Foundation.Data) throws
   public func set(option: SwiftSRT.SRTSocketOption, value: Swift.Int) throws
+  public func setOption(option: SwiftSRT.SRTSocketOption, value: Swift.String) throws
   public func get(option: SwiftSRT.SRTSocketOption) -> Foundation.NSValue
   public func stats(shouldClear clear: Swift.Bool) -> [Swift.AnyHashable : Any]
+  public func getState() -> SwiftSRT.SRTSocketState
+}
+public class SRTStream {
+  public init(serverUrl: Foundation.URL, streamid: Swift.String = "1") throws
+  public func close()
+  @objc deinit
+}
+extension SwiftSRT.SRTStream : SwiftSRT.TSWriterDelegate {
+  public func didOutput(_ data: Foundation.Data)
 }
 public enum SRTError : Swift.Int, Swift.Error {
   case unknown
@@ -137,7 +171,7 @@ public enum SRTError : Swift.Int, Swift.Error {
     get
   }
 }
-extension SRTError : Foundation.LocalizedError {
+extension SwiftSRT.SRTError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -157,6 +191,9 @@ public class SRTServer {
 extension SwiftSRT.SRTSocketOption : Swift.Equatable {}
 extension SwiftSRT.SRTSocketOption : Swift.Hashable {}
 extension SwiftSRT.SRTSocketOption : Swift.RawRepresentable {}
+extension SwiftSRT.SRTSocketState : Swift.Equatable {}
+extension SwiftSRT.SRTSocketState : Swift.Hashable {}
+extension SwiftSRT.SRTSocketState : Swift.RawRepresentable {}
 extension SwiftSRT.SRTError : Swift.Equatable {}
 extension SwiftSRT.SRTError : Swift.Hashable {}
 extension SwiftSRT.SRTError : Swift.RawRepresentable {}

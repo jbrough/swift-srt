@@ -6,6 +6,6 @@ framework module SwiftSRT {
 }
 
 module SwiftSRT.Swift {
-    header "SwiftSRT-Swift.h"
-    requires objc
+  header "SwiftSRT-Swift.h"
+  requires objc
 }
