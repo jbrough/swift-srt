@@ -159,7 +159,7 @@
 }
 
 - (int)setOption:(int)option toValue:(const char *)value forSocket:(int)socket {
-    int result = srt_setsockopt(socket, 0, (SRT_SOCKOPT)option, value, sizeof(value));
+    int result = srt_setsockopt(socket, 0, (SRT_SOCKOPT)option, value, strlen(value));
     
     if (result == SRT_ERROR) {
         [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
